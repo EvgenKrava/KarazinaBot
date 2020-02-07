@@ -16,6 +16,7 @@ public class Main {
         commands.put("/start", new StartCommand());
         commands.put("/today", new StartCommand());
         commands.put("/timetable", new TimeTableCommand());
+        commands.put("/left", new LeftCommand());
 
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();

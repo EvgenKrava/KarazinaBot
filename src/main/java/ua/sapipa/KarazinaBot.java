@@ -1,7 +1,6 @@
 package ua.sapipa;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ua.sapipa.command.Command;
@@ -20,14 +19,14 @@ public class KarazinaBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        System.out.println("Have message from user " + update.getMessage().getChat().getUserName() + " " +update.getMessage().getLocation());
         try {
+            System.out.println("Have message from user " + update.getMessage().getChat().getUserName() + " " + update.getMessage().getLocation());
             execute(commands.getOrDefault(update.getMessage().getText().split(" ")[0], new DefaultCommand()).execute(update));
-        } catch (TelegramApiException e) {
+        } catch (NullPointerException | TelegramApiException e) {
             e.printStackTrace();
         }
-
     }
+
 
     @Override
     public String getBotUsername() {
