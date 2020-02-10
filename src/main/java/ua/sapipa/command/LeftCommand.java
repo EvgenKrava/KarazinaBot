@@ -57,11 +57,7 @@ public class LeftCommand implements Command {
                 LocalDateTime.now().getMonth(),
                 LocalDateTime.now().getDayOfMonth(),
                 8,
-                0)) || now.isAfter(LocalDateTime.of(LocalDateTime.now().getYear(),
-                LocalDateTime.now().getMonth(),
-                LocalDateTime.now().getDayOfMonth(),
-                20,
-                0))) {
+                30)) || now.isAfter(seven)) {
             return new SendMessage().setChatId(update.getMessage().getChatId()).setText("Сейчас нет пары!");
         }
         LocalDateTime[] localDateTimes = {one, two, three, four, five, six, seven};

@@ -7,6 +7,6 @@ public class StartCommand implements Command {
     @Override
     public SendMessage execute(Update update) {
 
-        return new SendMessage().setChatId(update.getMessage().getChatId()).setText("Привет, надеюсь ты  с КБ-31.\nИначе тебе будет не интересно.");
+        return new SendMessage().setChatId(update.getMessage().getChatId()).setText("Привет, надеюсь ты  с КБ-31.\nИначе тебе будет не интересно.\nСписок команд: /help");
     }
 }

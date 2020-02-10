@@ -14,7 +14,8 @@ public class Main {
         commands.put("/time", new TimeCommand());
         commands.put("/help", new HelpCommand());
         commands.put("/start", new StartCommand());
-        commands.put("/today", new StartCommand());
+        commands.put("/today", new TodayCommand());
+        commands.put("/tomorrow", new TomorrowCommand());
         commands.put("/timetable", new TimeTableCommand());
         commands.put("/left", new LeftCommand());
 
