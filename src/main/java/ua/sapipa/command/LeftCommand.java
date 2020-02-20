@@ -1,14 +1,21 @@
 package ua.sapipa.command;
 
+
+import org.apache.log4j.Logger;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.Chat;
+import org.telegram.telegrambots.meta.api.objects.User;
+import org.telegram.telegrambots.meta.bots.AbsSender;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Objects;
 
-public class LeftCommand implements Command {
+public class LeftCommand extends Command {
+
+    private static final Logger LOG = Logger.getLogger(LeftCommand.class);
 
     private static final LocalDateTime one = LocalDateTime.of(LocalDateTime.now().getYear(),
             LocalDateTime.now().getMonth(),
@@ -46,34 +53,39 @@ public class LeftCommand implements Command {
             20,
             0);
 
+    public LeftCommand(String commandIdentifier, String description) {
+        super(commandIdentifier, description);
+    }
+
     @Override
-    public SendMessage execute(Update update) {
-
-        LocalDateTime now = LocalDateTime.now();
-        if (Objects.equals(now.getDayOfWeek(), DayOfWeek.SATURDAY) || Objects.equals(now.getDayOfWeek(), DayOfWeek.SUNDAY)) {
-            return new SendMessage().setChatId(update.getMessage().getChatId()).setText("Сегодня выходной, расслабься!");
-        }
-        if (now.isBefore(LocalDateTime.of(LocalDateTime.now().getYear(),
-                LocalDateTime.now().getMonth(),
-                LocalDateTime.now().getDayOfMonth(),
-                8,
-                30)) || now.isAfter(seven)) {
-            return new SendMessage().setChatId(update.getMessage().getChatId()).setText("Сейчас нет пары!");
-        }
-        LocalDateTime[] localDateTimes = {one, two, three, four, five, six, seven};
-        LocalDateTime end = null;
-        System.out.println(now);
-        int num = 0;
-        for (int i = 0; i < localDateTimes.length - 1; i++) {
-            System.out.println(localDateTimes[i]);
-            if (now.isAfter(localDateTimes[i]) && now.isBefore(localDateTimes[i + 1])) {
-                end = localDateTimes[i + 1];
-                num = i + 2;
+    public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
+        try {
+            LocalDateTime now = LocalDateTime.now();
+            if (Objects.equals(now.getDayOfWeek(), DayOfWeek.SATURDAY) || Objects.equals(now.getDayOfWeek(), DayOfWeek.SUNDAY)) {
+                absSender.execute(new SendMessage().setChatId(chat.getId()).setText("Сегодня выходной, расслабься!"));
             }
-        }
+            if (now.isBefore(LocalDateTime.of(LocalDateTime.now().getYear(),
+                    LocalDateTime.now().getMonth(),
+                    LocalDateTime.now().getDayOfMonth(),
+                    8,
+                    30)) || now.isAfter(seven)) {
+                absSender.execute(new SendMessage().setChatId(chat.getId()).setText("Сейчас нет пары!"));
+            }
+            LocalDateTime[] localDateTimes = {one, two, three, four, five, six, seven};
+            LocalDateTime end = one;
+            int num = 0;
+            for (int i = 0; i < localDateTimes.length - 1; i++) {
+                if (now.isAfter(localDateTimes[i]) && now.isBefore(localDateTimes[i + 1])) {
+                    end = localDateTimes[i + 1];
+                    num = i + 2;
+                }
+            }
 
-        long sec = end.toEpochSecond(ZoneOffset.UTC) - now.toEpochSecond(ZoneOffset.UTC);
-        LocalDateTime res = LocalDateTime.ofEpochSecond(sec, 0, ZoneOffset.UTC);
-        return new SendMessage().setChatId(update.getMessage().getChatId()).setText("До конца " + num + " пары " + res.getHour() + " ч. " + res.getMinute() + " мин. " + res.getSecond() + "сек.");
+            long sec = end.toEpochSecond(ZoneOffset.UTC) - now.toEpochSecond(ZoneOffset.UTC);
+            LocalDateTime res = LocalDateTime.ofEpochSecond(sec, 0, ZoneOffset.UTC);
+            absSender.execute(new SendMessage().setChatId(chat.getId()).setText("До конца " + num + " пары " + res.getHour() + " ч. " + res.getMinute() + " мин. " + res.getSecond() + "сек."));
+        } catch (TelegramApiException e) {
+            LOG.error(e);
+        }
     }
 }

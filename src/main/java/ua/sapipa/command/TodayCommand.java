@@ -1,101 +1,52 @@
 package ua.sapipa.command;
 
+
+import org.apache.log4j.Logger;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.Chat;
+import org.telegram.telegrambots.meta.api.objects.User;
+import org.telegram.telegrambots.meta.bots.AbsSender;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import ua.sapipa.Util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
-public class TodayCommand implements Command {
+public class TodayCommand extends Command {
 
-    @Override
-    public SendMessage execute(Update update) {
-        return new SendMessage().setChatId(update.getMessage().getChatId()).setText(text());
+    private static final Logger LOG = Logger.getLogger(TodayCommand.class);
+
+    public TodayCommand(String commandIdentifier, String description) {
+        super(commandIdentifier, description);
     }
 
     protected String text() {
-        LocalDateTime now = LocalDateTime.now();
-        int week = 0;
-        switch (now.getMonth()) {
-            case FEBRUARY:
-                if (now.getDayOfMonth() >= 10 && now.getDayOfMonth() <= 14) {
-                    week = 1;
-                }
-                if (now.getDayOfMonth() >= 17 && now.getDayOfMonth() <= 21) {
-                    week = 2;
-                }
-                if (now.getDayOfMonth() >= 24 && now.getDayOfMonth() <= 28) {
-                    week = 3;
-                }
-                break;
-            case MARCH:
-                if (now.getDayOfMonth() >= 2 && now.getDayOfMonth() <= 6) {
-                    week = 4;
-                }
-                if (now.getDayOfMonth() >= 9 && now.getDayOfMonth() <= 13) {
-                    week = 5;
-                }
-                if (now.getDayOfMonth() >= 16 && now.getDayOfMonth() <= 20) {
-                    week = 6;
-                }
-                if (now.getDayOfMonth() >= 23 && now.getDayOfMonth() <= 27) {
-                    week = 7;
-                }
-                if (now.getDayOfMonth() >= 30 && now.getDayOfMonth() <= 31) {
-                    week = 8;
-                }
-                break;
-            case APRIL:
-                if (now.getDayOfMonth() >= 1 && now.getDayOfMonth() <= 3) {
-                    week = 8;
-                }
-                if (now.getDayOfMonth() >= 6 && now.getDayOfMonth() <= 10) {
-                    week = 9;
-                }
-                if (now.getDayOfMonth() >= 13 && now.getDayOfMonth() <= 17) {
-                    week = 10;
-                }
-                if (now.getDayOfMonth() >= 20 && now.getDayOfMonth() <= 24) {
-                    week = 11;
-                }
-                if (now.getDayOfMonth() >= 27 && now.getDayOfMonth() <= 30) {
-                    week = 12;
-                }
-                break;
-            case MAY:
-                if (now.getDayOfMonth() == 1) {
-                    week = 12;
-                }
-                if (now.getDayOfMonth() >= 4 && now.getDayOfMonth() <= 8) {
-                    week = 13;
-                }
-                if (now.getDayOfMonth() >= 11 && now.getDayOfMonth() <= 15) {
-                    week = 14;
-                }
-                if (now.getDayOfMonth() >= 18 && now.getDayOfMonth() <= 22) {
-                    week = 15;
-                }
-                if (now.getDayOfMonth() >= 25 && now.getDayOfMonth() <= 29) {
-                    week = 16;
-                }
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + now.getMonth());
-        }
         StringBuilder stringBuilder = new StringBuilder();
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner(new File("src/main/resources/" + (week % 2 == 0 ? 2 : 1) + File.separator + now.getDayOfWeek() + ".txt"));
+        try (Scanner scanner = new Scanner(new File("src/main/resources/"
+                + (Util.isEven() ? 2 : 1)
+                + File.separator
+                + LocalDateTime.now().getDayOfWeek()
+                + ".txt"))
+        ) {
+            while (scanner.hasNextLine()) {
+                stringBuilder.append(scanner.nextLine());
+                stringBuilder.append(System.lineSeparator());
+            }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            LOG.error(e);
             return "See you later alligator!";
         }
-        while (scanner.hasNextLine()) {
-            stringBuilder.append(scanner.nextLine());
-            stringBuilder.append(System.lineSeparator());
-        }
         return stringBuilder.toString();
+    }
+
+    @Override
+    public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
+        try {
+            absSender.execute(new SendMessage().setChatId(chat.getId()).setText(text()));
+        } catch (TelegramApiException e) {
+            LOG.error(e);
+        }
     }
 }

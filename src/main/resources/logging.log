@@ -1,0 +1,92 @@
+2020-02-10 18:35:26 INFO  KarazinaBot:25 - Have message "/tomorrow" from user old_from_kb
+2020-02-10 18:35:47 INFO  KarazinaBot:25 - Have message "/tomorrow" from user old_from_kb
+2020-02-10 18:35:48 INFO  KarazinaBot:25 - Have message "/full" from user old_from_kb
+2020-02-10 18:36:06 INFO  KarazinaBot:25 - Have message "/left" from user old_from_kb
+2020-02-10 18:36:45 INFO  KarazinaBot:25 - Have message "/help" from user nehvatilofantazii
+2020-02-10 18:36:50 INFO  KarazinaBot:25 - Have message "Жека хуй соси" from user nehvatilofantazii
+2020-02-10 18:37:17 INFO  KarazinaBot:25 - Have message "ссссссс" from user nehvatilofantazii
+2020-02-10 18:37:20 INFO  KarazinaBot:25 - Have message "/left" from user old_from_kb
+2020-02-10 18:38:00 INFO  KarazinaBot:25 - Have message "/left" from user old_from_kb
+2020-02-10 18:38:01 INFO  KarazinaBot:25 - Have message "/left" from user old_from_kb
+2020-02-10 18:38:03 INFO  KarazinaBot:25 - Have message "а" from user nehvatilofantazii
+2020-02-10 18:38:03 INFO  KarazinaBot:25 - Have message "п" from user nehvatilofantazii
+2020-02-10 18:38:03 INFO  KarazinaBot:25 - Have message "р" from user nehvatilofantazii
+2020-02-10 18:38:05 INFO  KarazinaBot:25 - Have message "в" from user nehvatilofantazii
+2020-02-10 18:38:06 INFO  KarazinaBot:25 - Have message "/today" from user old_from_kb
+2020-02-10 18:38:09 INFO  KarazinaBot:25 - Have message "ы" from user nehvatilofantazii
+2020-02-10 18:38:10 INFO  KarazinaBot:25 - Have message "й" from user nehvatilofantazii
+2020-02-10 18:38:10 INFO  KarazinaBot:25 - Have message "е" from user nehvatilofantazii
+2020-02-10 18:38:13 INFO  KarazinaBot:25 - Have message "к" from user nehvatilofantazii
+2020-02-10 18:38:26 INFO  KarazinaBot:25 - Have message "д" from user nehvatilofantazii
+2020-02-10 18:47:16 INFO  KarazinaBot:25 - Have message "/start" from user shesstaya
+2020-02-10 18:47:21 INFO  KarazinaBot:25 - Have message "/help" from user shesstaya
+2020-02-10 18:48:08 INFO  KarazinaBot:25 - Have message "/full" from user shesstaya
+2020-02-10 18:48:19 INFO  KarazinaBot:25 - Have message "/help" from user shesstaya
+2020-02-10 18:48:25 INFO  KarazinaBot:25 - Have message "/full" from user shesstaya
+2020-02-10 18:48:30 INFO  KarazinaBot:25 - Have message "/today" from user shesstaya
+2020-02-10 18:48:47 INFO  KarazinaBot:25 - Have message "/timetable" from user shesstaya
+2020-02-10 18:48:53 INFO  KarazinaBot:25 - Have message "/who" from user shesstaya
+2020-02-10 18:48:58 INFO  KarazinaBot:25 - Have message "/left" from user shesstaya
+2020-02-10 18:49:08 INFO  KarazinaBot:25 - Have message "/tomorrow" from user shesstaya
+2020-02-10 18:49:24 INFO  KarazinaBot:25 - Have message "/week" from user shesstaya
+2020-02-10 18:50:51 INFO  KarazinaBot:25 - Have message "/exam" from user shesstaya
+2020-02-10 21:02:05 INFO  KarazinaBot:25 - Have message "/start" from user daynilova
+2020-02-10 21:02:14 INFO  KarazinaBot:25 - Have message "/help" from user daynilova
+2020-02-10 21:02:41 INFO  KarazinaBot:25 - Have message "/week" from user daynilova
+2020-02-10 21:02:48 INFO  KarazinaBot:25 - Have message "/tomorrow" from user daynilova
+2020-02-10 22:08:18 INFO  KarazinaBot:25 - Have message "/today" from user old_from_kb
+2020-02-10 22:08:27 INFO  KarazinaBot:25 - Have message "/toda" from user old_from_kb
+2020-02-11 00:54:44 INFO  KarazinaBot:26 - Have message "/toda" from user old_from_kb
+2020-02-11 00:54:44 ERROR KarazinaBot:30 - org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending photo: [400] Bad Request: wrong HTTP URL specified
+2020-02-11 00:55:23 INFO  KarazinaBot:26 - Have message "/toda" from user old_from_kb
+2020-02-11 00:56:04 INFO  KarazinaBot:26 - Have message "Hui" from user nehvatilofantazii
+2020-02-11 00:56:18 INFO  KarazinaBot:26 - Have message "/help" from user nehvatilofantazii
+2020-02-11 00:56:26 INFO  KarazinaBot:26 - Have message "/today" from user nehvatilofantazii
+2020-02-11 09:14:42 INFO  KarazinaBot:26 - Have message "/today" from user old_from_kb
+2020-02-11 09:21:46 INFO  KarazinaBot:26 - Have message "/left" from user old_from_kb
+2020-02-11 09:21:46 ERROR KarazinaBot:30 - java.lang.NullPointerException
+2020-02-11 09:21:58 INFO  KarazinaBot:26 - Have message "/left" from user old_from_kb
+2020-02-11 09:21:58 ERROR KarazinaBot:30 - java.lang.NullPointerException
+2020-02-11 11:25:28 INFO  KarazinaBot:26 - Have message "/left" from user shesstaya
+2020-02-11 11:25:36 INFO  KarazinaBot:26 - Have message "/left" from user shesstaya
+2020-02-11 11:25:46 INFO  KarazinaBot:26 - Have message "/today" from user shesstaya
+2020-02-11 11:33:51 INFO  KarazinaBot:26 - Have message "/today" from user old_from_kb
+2020-02-11 11:33:55 INFO  KarazinaBot:26 - Have message "/left" from user old_from_kb
+2020-02-11 11:34:24 INFO  KarazinaBot:26 - Have message "/left" from user old_from_kb
+2020-02-11 12:08:20 INFO  KarazinaBot:26 - Have message "/left" from user old_from_kb
+2020-02-11 12:08:33 INFO  KarazinaBot:26 - Have message "/today" from user old_from_kb
+2020-02-11 12:08:42 INFO  KarazinaBot:26 - Have message "/tomorrow" from user old_from_kb
+2020-02-11 12:09:01 INFO  KarazinaBot:26 - Have message "/help" from user old_from_kb
+2020-02-11 12:09:04 INFO  KarazinaBot:26 - Have message "/timetable" from user old_from_kb
+2020-02-11 12:09:31 INFO  KarazinaBot:26 - Have message "/start" from user Rubo12
+2020-02-11 12:09:37 INFO  KarazinaBot:26 - Have message "/help" from user Rubo12
+2020-02-11 12:09:54 INFO  KarazinaBot:26 - Have message "/exam" from user Rubo12
+2020-02-11 12:12:55 INFO  KarazinaBot:26 - Have message "/help" from user Rubo12
+2020-02-11 12:13:12 INFO  KarazinaBot:26 - Have message "Женёк, сосать" from user Rubo12
+2020-02-11 17:09:40 INFO  KarazinaBot:27 - Have message "/left" from user old_from_kb
+2020-02-11 17:09:40 ERROR KarazinaBot:31 - org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: ChatId parameter can't be empty in method: SendPhoto{chatId='null', photo=null, caption='null', disableNotification=null, replyToMessageId=null, replyMarkup=null, parseMode='null'}
+2020-02-11 17:09:40 INFO  KarazinaBot:27 - Have message "/left" from user old_from_kb
+2020-02-11 17:09:41 ERROR KarazinaBot:31 - org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: ChatId parameter can't be empty in method: SendPhoto{chatId='null', photo=null, caption='null', disableNotification=null, replyToMessageId=null, replyMarkup=null, parseMode='null'}
+2020-02-11 17:09:41 INFO  KarazinaBot:27 - Have message "/timetable" from user old_from_kb
+2020-02-11 17:09:41 ERROR KarazinaBot:31 - org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: ChatId parameter can't be empty in method: SendPhoto{chatId='null', photo=null, caption='null', disableNotification=null, replyToMessageId=null, replyMarkup=null, parseMode='null'}
+2020-02-11 17:31:27 INFO  KarazinaBot:27 - Have message "/timetable" from user old_from_kb
+2020-02-11 18:00:36 INFO  KarazinaBot:25 - Have message "/left" from user old_from_kb
+2020-02-11 18:00:41 INFO  KarazinaBot:25 - Have message "/timetable" from user old_from_kb
+2020-02-11 18:41:37 INFO  KarazinaBot:25 - Have message "/vlad" from user old_from_kb
+2020-02-11 18:41:50 INFO  KarazinaBot:25 - Have message "/help" from user old_from_kb
+2020-02-11 18:48:15 INFO  KarazinaBot:25 - Have message "/help" from user old_from_kb
+2020-02-11 18:48:17 INFO  KarazinaBot:25 - Have message "/list" from user old_from_kb
+2020-02-11 18:48:31 INFO  KarazinaBot:25 - Have message "/left" from user old_from_kb
+2020-02-11 18:48:38 INFO  KarazinaBot:25 - Have message "/who" from user old_from_kb
+2020-02-11 18:50:33 INFO  KarazinaBot:25 - Have message "/who" from user old_from_kb
+2020-02-11 18:51:09 INFO  KarazinaBot:25 - Have message "/who" from user old_from_kb
+2020-02-11 18:52:03 INFO  KarazinaBot:25 - Have message "/who" from user old_from_kb
+2020-02-11 18:57:26 INFO  KarazinaBot:25 - Have message "/who" from user old_from_kb
+2020-02-12 08:19:00 INFO  KarazinaBot:25 - Have message "/vlad" from user old_from_kb
+2020-02-12 08:19:34 INFO  KarazinaBot:25 - Have message "/list" from user old_from_kb
+2020-02-12 08:53:33 INFO  KarazinaBot:25 - Have message "/today" from user old_from_kb
+2020-02-12 14:51:03 INFO  KarazinaBot:25 - Have message "/today" from user old_from_kb
+2020-02-12 14:51:04 INFO  KarazinaBot:25 - Have message "/left" from user old_from_kb
+2020-02-19 08:37:04 ERROR KarazinaBot:37 - org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: ChatId parameter can't be empty in method: SendMessage{chatId='null', text='HUI', parseMode='null', disableNotification='null', disableWebPagePreview=null, replyToMessageId=null, replyMarkup=null}
+2020-02-19 08:42:18 ERROR KarazinaBot:38 - org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: ChatId parameter can't be empty in method: SendMessage{chatId='null', text='HUI', parseMode='null', disableNotification='null', disableWebPagePreview=null, replyToMessageId=null, replyMarkup=null}
+2020-02-19 08:42:31 ERROR KarazinaBot:38 - org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: ChatId parameter can't be empty in method: SendMessage{chatId='null', text='HUI', parseMode='null', disableNotification='null', disableWebPagePreview=null, replyToMessageId=null, replyMarkup=null}

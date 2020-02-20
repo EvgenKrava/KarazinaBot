@@ -1,36 +1,42 @@
 package ua.sapipa;
 
-import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.apache.log4j.Logger;
+import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import ua.sapipa.command.Command;
-import ua.sapipa.command.DefaultCommand;
+import ua.sapipa.command.*;
 
-import java.util.Map;
+public class KarazinaBot extends TelegramLongPollingCommandBot {
 
-public class KarazinaBot extends TelegramLongPollingBot {
+    private static final Logger LOG = Logger.getLogger(KarazinaBot.class);
 
-    private Map<String, Command> commands;
-
-    public KarazinaBot(Map<String, Command> commands) {
-        this.commands = commands;
-
-    }
-
-    @Override
-    public void onUpdateReceived(Update update) {
-        try {
-            System.out.println("Have message from user " + update.getMessage().getChat().getUserName() + " " + update.getMessage().getLocation());
-            execute(commands.getOrDefault(update.getMessage().getText().split(" ")[0], new DefaultCommand()).execute(update));
-        } catch (NullPointerException | TelegramApiException e) {
-            e.printStackTrace();
-        }
+    public KarazinaBot() {
+        register(new StartCommand("start", "Start command!\n"));
+        register(new HelpCommand("help", "Available commands\n"));
+        register(new LeftCommand("left", "Time left\n"));
+        register(new ListCommand("list", "Group list\n"));
+        register(new TimeCommand("time", "Current time\n"));
+        register(new TimeTableCommand("timetable", "Time table\n"));
+        register(new TodayCommand("today", ""));
+        register(new TomorrowCommand("tomorrow", ""));
+        register(new VladCommand("vlad", ""));
+        register(new WhoCommand("who", ""));
     }
 
 
     @Override
     public String getBotUsername() {
         return "KarazinaBot";
+    }
+
+    @Override
+    public void processNonCommandUpdate(Update update) {
+        try {
+            execute(new SendMessage().setChatId(update.getMessage().getChatId()).setText("Не понимаю такое)"));
+        } catch (TelegramApiException e) {
+            LOG.error(e);
+        }
     }
 
     @Override
